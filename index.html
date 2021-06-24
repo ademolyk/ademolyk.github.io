@@ -6,25 +6,6 @@
 </head>
 <body>
 <script type="text/javascript">
-let urlPamams = new URL(window.location.href);
-let queryType = urlPamams.searchParams.get("queryType") || "";
-if (queryType === "verify"){
-	let api = "http://47.110.253.251/abc/user/verify/wechat/";
-	let url = new URL(api);
-	url.searchParams.set("signature");
-	url.searchParams.set("timestamp");
-	url.searchParams.set("nonce");
-	url.searchParams.set("echostr");
-	window.location.href = url.toString();
-}else {
-	let code = urlPamams.searchParams.get("code") || "";
-	let api = "http://47.110.253.251/abc/mirco/callback/wechat/code";
-	let url = new URL(api);
-	url.searchParams.set("origin", queryType);
-	window.location.href = url.toString();
-}
-
-	
 </script>
 </body>
 </html>
